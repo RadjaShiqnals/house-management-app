@@ -11,11 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('houses', function (Blueprint $table) {
+        Schema::create('residents', function (Blueprint $table) {
             $table->id();
-            $table->string('house_code')->unique();
-            $table->enum('status', ['occupied', 'vacant'])->default('vacant');
+            $table->string('nama_lengkap');
+            $table->string('foto_ktp')->nullable();
+            $table->enum('status_penghuni', ['tetap', 'kontrak']);
+            $table->string('nomor_telepon');
+            $table->enum('status_nikah', ['menikah', 'belum']);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -24,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('houses');
+        Schema::dropIfExists('residents');
     }
 };

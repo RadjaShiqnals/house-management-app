@@ -11,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('payments', function (Blueprint $table) {
+        Schema::create('fee_types', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('resident_id')->constrained();
-            $table->foreignId('house_id')->constrained();
-            $table->enum('type', ['security', 'trash']);
-            $table->decimal('amount', 10, 2);
-            $table->integer('month');
-            $table->integer('year');
+            $table->enum('nama', ['satpam', 'kebersihan']);
+            $table->decimal('nominal', 12, 2);
             $table->timestamps();
         });
     }
@@ -28,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('payments');
+        Schema::dropIfExists('fee_types');
     }
 };

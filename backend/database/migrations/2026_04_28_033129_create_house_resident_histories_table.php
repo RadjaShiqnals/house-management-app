@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('residents', function (Blueprint $table) {
+        Schema::create('house_resident_histories', function (Blueprint $table) {
             $table->id();
-            $table->string('full_name');
-            $table->string('id_card_path');
-            $table->enum('status', ['permanent', 'contract']);
-            $table->string('phone_number');
-            $table->boolean('is_married');
-            $table->foreignId('house_id')->constrained()->onDelete('cascade');
+            $table->foreignId('house_id')->constrained('houses')->cascadeOnDelete();
+            $table->foreignId('resident_id')->constrained('residents')->cascadeOnDelete();
+            $table->date('tgl_masuk');
+            $table->date('tgl_keluar')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('residents');
+        Schema::dropIfExists('house_resident_histories');
     }
 };
