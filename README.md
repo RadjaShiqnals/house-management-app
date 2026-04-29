@@ -316,9 +316,9 @@ DB::transaction(function () use ($bill, $request) {
 - [x] Migration `payment_bills`
 - [x] Migration `payments`
 - [x] Migration `expenses` (add `deleted_at`)
-- [ ] `php artisan migrate`
-- [ ] Seeder: `UserSeeder`, `FeeTypeSeeder`, `HouseSeeder`
-- [ ] `php artisan db:seed`
+- [x] `php artisan migrate`
+- [x] Seeder: `UserSeeder`, `FeeTypeSeeder`, `HouseSeeder`
+- [x] `php artisan db:seed`
 
 ### Backend: Models & Relations
 - [x] Model `Resident`
@@ -331,44 +331,44 @@ DB::transaction(function () use ($bill, $request) {
 
 ### Backend: Auth
 - [x] Install Sanctum: `php artisan install:api`
-- [ ] `AuthController`: login (return token), logout, me
-- [ ] Route: POST /api/v1/auth/login, POST /api/v1/auth/logout, GET /api/v1/auth/me
-- [ ] Middleware `auth:sanctum` pada route terproteksi
+- [x] `AuthController`: login (return token), logout, me
+- [x] Route: POST /api/v1/auth/login, POST /api/v1/auth/logout, GET /api/v1/auth/me
+- [x] Middleware `auth:sanctum` pada route terproteksi
 
 ### Backend: CRUD Penghuni
-- [ ] `StoreResidentRequest` + `UpdateResidentRequest`
-- [ ] `ResidentController`: index (paginate+filter), store, show, update, destroy (Soft Delete)
-- [ ] Upload & simpan foto KTP via Storage
-- [ ] `php artisan storage:link`
-- [ ] Route resource `/api/v1/residents`
+- [x] `StoreResidentRequest` + `UpdateResidentRequest`
+- [x] `ResidentController`: index (paginate+filter), store, show, update, destroy (Soft Delete)
+- [x] Upload & simpan foto KTP via Storage
+- [x] `php artisan storage:link`
+- [x] Route resource `/api/v1/residents`
 
 ### Backend: CRUD Rumah
-- [ ] `StoreHouseRequest`
-- [ ] `HouseController`: index, store, show, update
-- [ ] `HouseResidentController`: assign penghuni (insert history, update house), unassign (set tgl_keluar)
-- [ ] Route: resource `/api/v1/houses`, nested `/api/v1/houses/{house}/residents`
+- [x] `StoreHouseRequest`
+- [x] `HouseController`: index, store, show, update
+- [x] `HouseResidentController`: assign penghuni (insert history, update house), unassign (set tgl_keluar)
+- [x] Route: resource `/api/v1/houses`, nested `/api/v1/houses/{house}/residents`
 
 ### Backend: Tagihan & Pembayaran
-- [ ] `BillGeneratorService` (Logic: prevent duplicate for same month)
-- [ ] `PaymentBillController`: index (filter bulan/status), store (Manual Trigger), show
-- [ ] `StorePaymentRequest`
-- [ ] `PaymentService`: proses bayar dalam `DB::transaction`, update status bill
-- [ ] `PaymentController`: store
-- [ ] Route: `/api/v1/bills`, `/api/v1/bills/{bill}/pay`
+- [x] `BillGeneratorService` (Logic: prevent duplicate for same month)
+- [x] `PaymentBillController`: index (filter bulan/status), store (Manual Trigger), show
+- [x] `StorePaymentRequest`
+- [x] `PaymentService`: proses bayar dalam `DB::transaction`, update status bill
+- [x] `PaymentController`: store
+- [x] Route: `/api/v1/bills`, `/api/v1/bills/{bill}/pay`
 
 ### Backend: Developer Features
-- [ ] `DeveloperExportController`: export residents, houses, expenses (include trashed)
-- [ ] Route: GET /api/v1/dev/export-residents, etc.
+- [x] `DeveloperExportController`: export residents, houses, expenses (include trashed)
+- [x] Route: GET /api/v1/dev/export-residents, etc.
 
 ### Backend: Pengeluaran
-- [ ] `StoreExpenseRequest`
-- [ ] `ExpenseController`: index (filter bulan), store, show, update, destroy (Soft Delete)
-- [ ] Route resource `/api/v1/expenses`
+- [x] `StoreExpenseRequest`
+- [x] `ExpenseController`: index (filter bulan), store, show, update, destroy (Soft Delete)
+- [x] Route resource `/api/v1/expenses`
 
 ### Backend: Laporan
-- [ ] `ReportController@monthlySummary` (param: year) -> total pemasukan vs pengeluaran per bulan
-- [ ] `ReportController@monthlyDetail` (param: year, month) -> detail transaksi bulan tertentu
-- [ ] Route: GET /api/v1/reports/monthly-summary, GET /api/v1/reports/monthly-detail
+- [x] `ReportController@monthlySummary` (param: year) -> total pemasukan vs pengeluaran per bulan
+- [x] `ReportController@monthlyDetail` (param: year, month) -> detail transaksi bulan tertentu
+- [x] Route: GET /api/v1/reports/monthly-summary, GET /api/v1/reports/monthly-detail
 
 ### Backend: Finalisasi
 - [ ] Config CORS
