@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1c267c;
+  --color-bg-light: #f5f6f8;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-light text-gray-800 m-0 antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+}
+
+@layer components {
+  .page-container { @apply flex-1; }
+  .page-header { @apply flex justify-between items-center mb-5 flex-wrap gap-2; }
+
+  .card { @apply bg-white rounded shadow-sm mb-5; }
+  .card-header { @apply p-4 border-b border-gray-200; }
+  .card-body { @apply p-5 overflow-x-auto; }
+
+  .btn-primary { @apply bg-primary text-white border-none py-2 px-4 rounded font-medium cursor-pointer transition-colors hover:bg-blue-900 disabled:opacity-50; }
+  .btn-secondary { @apply bg-gray-200 text-gray-800 border-none py-2 px-4 rounded cursor-pointer transition-colors hover:bg-gray-300; }
+  .btn-danger { @apply bg-red-600 text-white border-none py-2 px-4 rounded cursor-pointer transition-colors hover:bg-red-700; }
+  .btn-success { @apply bg-green-600 text-white border-none py-1 px-3 rounded cursor-pointer transition-colors hover:bg-green-700; }
+  .btn-edit { @apply bg-yellow-400 text-black border-none py-1 px-3 rounded cursor-pointer transition-colors hover:bg-yellow-500; }
+  .btn-sm { @apply py-1 px-2 text-sm rounded cursor-pointer; }
+
+  .form-group { @apply mb-4; }
+  .form-group label { @apply block mb-1 text-gray-800 font-medium; }
+  .input { @apply w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary; }
+
+  .data-table { @apply w-full border-collapse mt-2; }
+  .data-table th, .data-table td { @apply border border-gray-200 p-2 text-left; }
+  .data-table th { @apply bg-gray-50 text-gray-600 font-medium; }
+
+  .badge { @apply px-2 py-1 rounded-full text-xs font-bold inline-block; }
+  .badge.tetap { @apply bg-green-100 text-green-800; }
+  .badge.kontrak { @apply bg-yellow-100 text-yellow-800; }
+
+  .text-green { @apply text-green-600 font-bold; }
+  .text-red { @apply text-red-600 font-bold; }
+  .text-blue { @apply text-blue-600 font-bold; }
+
+  .summary-body { @apply flex gap-5 flex-wrap; }
+  .summary-item { @apply flex-1 p-5 rounded-lg bg-gray-50 text-center min-w-[150px]; }
+  .summary-item h3 { @apply m-0 mb-2 text-base text-gray-500; }
+  .summary-item p { @apply m-0 text-2xl font-bold; }
+
+  .welcome-section { @apply mb-8; }
+  .welcome-section h1 { @apply text-2xl text-gray-600 m-0 mb-2 font-medium; }
+  .welcome-section .time { @apply text-xl text-gray-500 m-0 mb-1; }
+  .welcome-section .date { @apply text-sm text-gray-400 m-0; }
+}

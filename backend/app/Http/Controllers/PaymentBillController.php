@@ -67,4 +67,16 @@ class PaymentBillController extends Controller
         $bill->load(['house', 'resident', 'feeType', 'payments']);
         return response()->json($bill);
     }
+
+    public function update(Request $request, PaymentBill $bill)
+    {
+        $bill->update($request->all());
+        return response()->json(['message' => 'Tagihan berhasil diupdate', 'data' => $bill]);
+    }
+
+    public function destroy(PaymentBill $bill)
+    {
+        $bill->delete();
+        return response()->json(['message' => 'Tagihan berhasil dihapus']);
+    }
 }

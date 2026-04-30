@@ -37,4 +37,10 @@ class HouseController extends Controller
         $house->update($request->validated());
         return response()->json(['message' => 'Rumah berhasil diupdate', 'data' => $house]);
     }
+
+    public function destroy(House $house)
+    {
+        $house->delete();
+        return response()->json(['message' => 'Rumah berhasil dihapus']);
+    }
 }

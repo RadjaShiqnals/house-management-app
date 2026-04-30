@@ -21,11 +21,11 @@ Route::prefix('v1')->group(function () {
         
         Route::apiResource('residents', ResidentController::class);
         
-        Route::apiResource('houses', HouseController::class)->except(['destroy']);
+        Route::apiResource('houses', HouseController::class);
         Route::post('houses/{house}/assign', [HouseResidentController::class, 'assign']);
         Route::post('houses/{house}/unassign', [HouseResidentController::class, 'unassign']);
 
-        Route::apiResource('bills', PaymentBillController::class)->except(['update', 'destroy']);
+        Route::apiResource('bills', PaymentBillController::class);
         Route::post('bills/generate', [PaymentBillController::class, 'generate']);
         Route::post('bills/{bill}/pay', [PaymentController::class, 'store']);
 
